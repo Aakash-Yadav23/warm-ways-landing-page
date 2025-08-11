@@ -28,6 +28,7 @@ export const Enterprises = () => {
           {logoFiles.map((file) => {
             const name = file.replace(/\.[^/.]+$/, '');
             return (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={file}
                 src={`/image/logos/${file}`}
