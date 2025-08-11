@@ -11,17 +11,19 @@ import Insight from '@/components/Insight';
 import Integrations from '@/components/Integrations';
 import Plans from '@/components/Plans';
 import Pricing from '@/components/Pricing';
+import Slider from '@/components/Slider';
 import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
-    <div className="min-h-screen  ">
+    <div className="min-h-screen">
       <Header />
-      <main className="flex flex-col mb-10 gap-4">
+      <main className="flex flex-col gap-0 sm:gap-2 md:gap-4">
         <Hero />
         <Enterprises />
         <Integrations />
         <Insight />
+        <Slider />
         <AiMarketing />
         <Plans />
         <Faq />

@@ -60,26 +60,26 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             What Our Users Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
             Hear from businesses who've transformed their workflows with our
             solutions
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -87,17 +87,17 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="mb-6">
-                <p className="text-gray-700 text-base leading-relaxed">
+              <div className="mb-4 sm:mb-6">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   "{testimonial.quote}"
                 </p>
               </div>
 
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center mr-3 overflow-hidden">
-                  <div className="w-full h-full  flex items-center justify-center text-white font-semibold text-sm">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mr-3 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center text-white font-semibold text-xs sm:text-sm">
                     <Image
                       src={testimonial.avatar}
                       width={30}
@@ -108,7 +108,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm">
                     {testimonial.author}
                   </div>
                   <div className="text-gray-500 text-xs">
@@ -128,12 +128,12 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4">
             <div className="flex -space-x-2">
               {trustedAvatars.map((avatar, index) => (
                 <div
                   key={index}
-                  className="w-[30px] h-[30px] bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white font-semibold"
+                  className="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white font-semibold"
                 >
                   <Image
                     src={avatar}
@@ -145,7 +145,7 @@ export default function Testimonials() {
                 </div>
               ))}
             </div>
-            <span className="text-gray-600 text-sm">
+            <span className="text-gray-600 text-xs sm:text-sm">
               Trusted by 5,000+ innovators worldwide
             </span>
           </div>

@@ -40,37 +40,37 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-10 max-w-7xl mx-auto rounded-xl bg-[#d7dfe469] px-4 sm:px-6 lg:px-8">
-      <div className="flex gap-2 items-center mx-auto bg-white w-fit p-1 rounded-full mb-8">
+    <section className="py-10 sm:py-16 md:py-20 w-full max-w-7xl mx-auto rounded-xl bg-[#d7dfe469]">
+      <div className="flex gap-2 items-center mx-auto bg-white w-fit p-1 rounded-full mb-6 sm:mb-8">
         <div className="flex gap-2 items-center border rounded-full w-fit p-1">
           <CircleQuestionMark size={15} />
-          <span className="text-sm">Your Queries, Simplified</span>
+          <span className="text-xs sm:text-sm">Your Queries, Simplified</span>
         </div>
       </div>
 
-      <div className="mx-auto w-fit flex gap-3 flex-col my-8">
-        <p className="text-6xl text-center text-gray-900">
+      <div className="mx-auto w-fit flex gap-2 sm:gap-3 flex-col my-6 sm:my-8">
+        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center text-gray-900 font-bold">
           Questions? Answers!
         </p>
-        <span className="text-center text-lg text-gray-600">
+        <span className="text-center text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Find quick answers to the most common questions about our platform
         </span>
       </div>
 
-      <div className="max-w-4xl mx-auto space-y-4">
+      <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
         {faqs.map((faq, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <button
               onClick={() => toggleFAQ(index)}
               className="w-full flex items-center justify-between text-left focus:outline-none group"
             >
-              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 pr-4">
                 {faq.question}
               </h3>
               <div
@@ -78,7 +78,7 @@ export default function Faq() {
                   openIndex === index ? 'rotate-180' : 'rotate-0'
                 }`}
               >
-                <ChevronUp className="w-5 h-5 text-gray-500" />
+                <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
               </div>
             </button>
 
@@ -91,16 +91,21 @@ export default function Faq() {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className="overflow-hidden"
             >
-              <div className="pt-4">
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              <div className="pt-3 sm:pt-4">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             </motion.div>
           </motion.div>
         ))}
       </div>
 
-      <div className="flex w-full justify-center items-center gap-5 mx-auto pt-10">
-        <Mail /> Feel free to mail us for any enquiries : alter@support.com
+      <div className="flex flex-col sm:flex-row w-full justify-center items-center gap-3 sm:gap-5 mx-auto pt-8 sm:pt-10 text-center">
+        <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+        <span className="text-sm sm:text-base">
+          Feel free to mail us for any enquiries: alter@support.com
+        </span>
       </div>
     </section>
   );
