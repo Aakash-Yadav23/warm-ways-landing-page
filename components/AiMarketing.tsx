@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import {
-  Book,
   Cloud,
   Zap,
   Users,
@@ -10,27 +9,10 @@ import {
   GitBranch,
   Eye,
   TrendingUp,
-  Shield,
   Handshake,
 } from 'lucide-react';
-import Image from 'next/image';
 
 export default function AiMarketing() {
-  const integrations = [
-    'Slack',
-    'HubSpot',
-    'Mailchimp',
-    'Salesforce',
-    'Google Analytics',
-    'Zapier',
-    'Shopify',
-    'WordPress',
-    'Facebook Ads',
-    'Google Ads',
-    'LinkedIn',
-    'Twitter',
-  ];
-
   const features = [
     {
       icon: Zap,

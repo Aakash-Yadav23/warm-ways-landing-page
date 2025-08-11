@@ -73,8 +73,8 @@ export default function Testimonials() {
             What Our Users Say
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
-            Hear from businesses who've transformed their workflows with our
-            solutions
+            Hear from businesses who&apos;ve transformed their workflows with
+            our solutions
           </p>
         </motion.div>
 
@@ -91,7 +91,7 @@ export default function Testimonials() {
             >
               <div className="mb-4 sm:mb-6">
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </div>
 
