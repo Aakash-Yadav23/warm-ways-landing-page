@@ -3,24 +3,104 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #0f172a;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #3b82f6;
+  --radius: 0.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Force light theme to match the reference design */
+
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
 }
+
+
+  .hero-bg{
+    position: relative;
+  }
+
+  .hero-bg::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/image/cloth-texture.jpg'); /* using existing JPG in public/image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-bg > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logos marquee */
+  .logo-marquee{
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-marquee-track{
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+  .logo-marquee-track.left{
+    animation: marquee-left 28s linear infinite;
+  }
+  .logo-marquee-track.right{
+    animation: marquee-right 28s linear infinite;
+  }
+  .logo-marquee-group{
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* ~gap-12 */
+    padding-inline: 1rem;
+  }
+  @keyframes marquee-left{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+  }
+  @keyframes marquee-right{
+    0%{ transform: translateX(-50%); }
+    100%{ transform: translateX(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .logo-marquee-track.left,
+    .logo-marquee-track.right{ animation: none; }
+  }
